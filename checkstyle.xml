@@ -11,7 +11,7 @@
         <property name="basedir" value="${basedir}"/>
     -->
     <!-- 检查每个包中是否有java注释文件，默认有package-info.java -->
-    <!-- <module name="JavadocPackage"/> -->
+    <module name="JavadocPackage"/>
     <!-- 检查文件是否以一个空行结束 -->
     <module name="NewlineAtEndOfFile"/>
 
