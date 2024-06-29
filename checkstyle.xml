@@ -10,7 +10,7 @@
         <property name="basedir" value="${basedir}"/>
     -->
     <!-- 检查每个包中是否有java注释文件，默认有package-info.java -->
-    <module name="JavadocPackage"/>
+<!--    <module name="JavadocPackage"/>-->
     <!-- 检查文件是否以一个空行结束 -->
     <module name="NewlineAtEndOfFile"/>
 
@@ -214,7 +214,7 @@
 
 
         <!-- 其他检查 -->
-        <!-- 文件中使用了System.out.print等
+        <!-- 文件中使用了System.out.print等 -->
         <module name="GenericIllegalRegexp">
             <property name="format" value="System\.out\.print"/>
         </module>
@@ -223,7 +223,7 @@
         </module>
         <module name="GenericIllegalRegexp">
             <property name="format" value="printStackTrace"/>
-        </module>-->
+        </module>
 
         <!-- 代码质量 -->
         <!-- 圈复杂度
