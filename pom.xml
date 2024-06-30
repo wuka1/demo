@@ -22,7 +22,7 @@
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.2.2</version>
         <configuration>
-<!--            <configLocation>check-style/google-check-style.xml</configLocation>-->
+            <configLocation>checkstyle.xml</configLocation>
 <!--            <includeTestSourceDirectory>true</includeTestSourceDirectory>-->
             <consoleOutput>true</consoleOutput>
             <violationSeverity>warning</violationSeverity>
