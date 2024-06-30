@@ -3,5 +3,6 @@ public class Main {
         System.out.println("this is a checkstyle test");
         System.out.println("third");
         System.out.println("第4次");
+        System.out.println("第5次");
     }
 }
