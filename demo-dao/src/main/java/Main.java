@@ -6,5 +6,6 @@ public class Main {
         System.out.println("第5次");
         System.out.println("第6次");
         System.out.println("第7次");
+        System.out.println("第8次");
     }
 }
