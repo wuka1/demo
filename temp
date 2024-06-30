@@ -1,0 +1,18 @@
+com.puppycrawl.tools.checkstyle.api.CheckstyleException: cannot initialize module TreeWalker - cannot initialize module JavadocMethod - Property 'allowMissingPropertyJavadoc' does not exist, please check the documentation
+	at com.puppycrawl.tools.checkstyle.Checker.setupChild(Checker.java:476)
+	at com.puppycrawl.tools.checkstyle.api.AutomaticBean.configure(AutomaticBean.java:201)
+	at com.puppycrawl.tools.checkstyle.Main.runCheckstyle(Main.java:403)
+	at com.puppycrawl.tools.checkstyle.Main.runCli(Main.java:330)
+	at com.puppycrawl.tools.checkstyle.Main.execute(Main.java:189)
+	at com.puppycrawl.tools.checkstyle.Main.main(Main.java:126)
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: cannot initialize module JavadocMethod - Property 'allowMissingPropertyJavadoc' does not exist, please check the documentation
+	at com.puppycrawl.tools.checkstyle.TreeWalker.setupChild(TreeWalker.java:128)
+	at com.puppycrawl.tools.checkstyle.api.AutomaticBean.configure(AutomaticBean.java:201)
+	at com.puppycrawl.tools.checkstyle.Checker.setupChild(Checker.java:471)
+	... 5 more
+Caused by: com.puppycrawl.tools.checkstyle.api.CheckstyleException: Property 'allowMissingPropertyJavadoc' does not exist, please check the documentation
+	at com.puppycrawl.tools.checkstyle.api.AutomaticBean.tryCopyProperty(AutomaticBean.java:227)
+	at com.puppycrawl.tools.checkstyle.api.AutomaticBean.configure(AutomaticBean.java:194)
+	at com.puppycrawl.tools.checkstyle.TreeWalker.setupChild(TreeWalker.java:123)
+	... 7 more
+CheckstyleÒÔ 1 ¸ö´íÎó½áÊø¡£
