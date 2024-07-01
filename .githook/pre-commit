@@ -11,17 +11,19 @@ echo "===========$*============"
 echo -e "\033[34m[style check]\033[0m start..."  
 wd=`pwd`  
   
-check_jar_path="$wd/.githook/checkstyle-9.3-all.jar"  
+check_jar_path="$wd/.githook/checkstyle-9.2.1-all.jar"  
 check_xml_path="$wd/.githook/cib_checks.xml"  
 
 print "当前工作目录：$wd"
   
 echo "No Java file changes." > temp  
 files=`git status --porcelain | sed s/^...// | grep '\.java$' |grep -v 'test'| tr '\n' ' '`  
-if [ -n "$files" ]; then  
-java -jar $check_jar_path -c $check_xml_path $files > temp 2>&1  
-fi  
-cat temp  
+if [ -n "$files" ]; then 
+java -jar $check_jar_path -c $check_xml_path $files -o temp 2>&1   
+#java -jar $check_jar_path -c $check_xml_path $files > temp 2>&1  
+fi 
+cat temp
+
 error=`cat temp | grep -E '\[(WARN|ERROR)\]'`  
 rm -rf temp  
   
