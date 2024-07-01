@@ -19,7 +19,6 @@ public class Main {
      * @param args str
      */
     public static void main(String[] args) {
-        System.out.println("test");
         String str = "test";
         Main m = new Main();
         m.print(str);
