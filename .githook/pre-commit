@@ -11,8 +11,8 @@ echo "===========$*============"
 echo -e "\033[34m[style check]\033[0m start..."  
 wd=`pwd`  
   
-check_jar_path="checkstyle-9.3-all.jar"  
-check_xml_path="cib_checks.xml"  
+check_jar_path="$wd/.githook/checkstyle-9.3-all.jar"  
+check_xml_path="$wd/.githook/cib_checks.xml"  
 
 print "当前工作目录：$wd"
   
