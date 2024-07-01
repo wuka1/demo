@@ -1,10 +1,14 @@
-
+/**
+ * main类
+ *
+ */
 public class Main {
 
 
     public Main() {
 
     }
+
     private String temp;
     /**
      *  打印方法.
@@ -12,7 +16,9 @@ public class Main {
      * @param str 入参
      *
       */
+    
     public void print(String str) {
+//        System.out.println(str);
     }
 
     /**
