@@ -22,7 +22,7 @@
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.2.2</version>
         <configuration>
-            <configLocation>custom_checks.xml</configLocation>
+            <configLocation>cib_checks.xml</configLocation>
 <!--            <includeTestSourceDirectory>true</includeTestSourceDirectory>-->
             <consoleOutput>true</consoleOutput>
             <violationSeverity>warning</violationSeverity>
