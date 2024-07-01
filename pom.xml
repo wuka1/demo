@@ -22,7 +22,7 @@
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.2.2</version>
         <configuration>
-            <configLocation>ali_checks.xml</configLocation>
+            <configLocation>custom_checks.xml</configLocation>
 <!--            <includeTestSourceDirectory>true</includeTestSourceDirectory>-->
             <consoleOutput>true</consoleOutput>
             <violationSeverity>warning</violationSeverity>
@@ -39,6 +39,11 @@
                 <artifactId>checkstyle</artifactId>
                 <version>9.3</version>
                 <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.p3c</groupId>
+                <artifactId>p3c-pmd</artifactId>
+                <version>2.1.1</version>
             </dependency>
         </dependencies>
         <executions>

@@ -2,17 +2,17 @@
 <project version="4">
   <component name="CheckStyle-IDEA" serialisationVersion="2">
     <checkstyleVersion>9.3</checkstyleVersion>
-    <scanScope>JavaOnly</scanScope>
+    <scanScope>AllSources</scanScope>
     <copyLibs>true</copyLibs>
     <option name="thirdPartyClasspath" />
     <option name="activeLocationIds">
-      <option value="5fbea4a5-2c8d-4600-946b-dcd404385caf" />
+      <option value="de340dc6-7e0e-492f-9ed4-99995d12779f" />
     </option>
     <option name="locations">
       <list>
         <ConfigurationLocation id="bundled-sun-checks" type="BUNDLED" scope="All" description="Sun Checks">(bundled)</ConfigurationLocation>
         <ConfigurationLocation id="bundled-google-checks" type="BUNDLED" scope="All" description="Google Checks">(bundled)</ConfigurationLocation>
-        <ConfigurationLocation id="5fbea4a5-2c8d-4600-946b-dcd404385caf" type="LOCAL_FILE" scope="All" description="ali">$PROJECT_DIR$/checkstyle.xml</ConfigurationLocation>
+        <ConfigurationLocation id="de340dc6-7e0e-492f-9ed4-99995d12779f" type="LOCAL_FILE" scope="All" description="cib_checks">$PROJECT_DIR$/cib_checks.xml</ConfigurationLocation>
         <ConfigurationLocation id="fa7a3268-962f-4dd0-9ddb-309874e0bd68" type="LOCAL_FILE" scope="All" description="custom_google_checks">
           $PROJECT_DIR$/google_checks.xml
           <option name="properties">

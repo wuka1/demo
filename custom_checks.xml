@@ -32,17 +32,14 @@
         <module name="UnusedImports" />
 
         <!-- 注释检查 -->
-        <!-- 检查构造函数的javadoc -->
-<!--        <module name="JavadocType">-->
+        <!-- 检查方法和构造函数的javadoc -->
+        <module name="JavadocType">
 <!--            <property name="allowUnknownTags" value="true"/>-->
 <!--            <message key="javadoc.missing" value="类注释：缺少Javadoc注释。"/>-->
-<!--        </module>-->
-        <module name="MissingJavadocMethod">
-            <property name="scope" value="public"/>
-            <property name="minLineCount" value="2"/>
-            <property name="allowedAnnotations" value="Override, Test"/>
-            <property name="tokens" value="METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF,
-                                   COMPACT_CTOR_DEF"/>
+        </module>
+        <module name="JavadocMethod">
+            <property name="tokens" value="METHOD_DEF" />
+            <message key="javadoc.missing" value="方法注释：缺少Javadoc注释。"/>
         </module>
         <module name="MissingJavadocType">
             <property name="scope" value="protected"/>
@@ -51,6 +48,7 @@
                       RECORD_DEF, ANNOTATION_DEF"/>
             <property name="excludeScope" value="nothing"/>
         </module>
+
 
         <!-- 命名检查 -->
         <!-- 局部的final变量，包括catch中的参数的检查 -->
@@ -77,6 +75,14 @@
         <module name="ParameterName " />
         <!-- 常量名的检查（只允许大写），默认^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$ -->
         <module name="ConstantName" />
+        <!--空格检查-->
+        <module name="EmptyLineSeparator">
+            <property name="tokens"
+                      value="PACKAGE_DEF, IMPORT, STATIC_IMPORT, CLASS_DEF, INTERFACE_DEF, ENUM_DEF,
+                    STATIC_INIT, INSTANCE_INIT, METHOD_DEF, CTOR_DEF, VARIABLE_DEF, RECORD_DEF,
+                    COMPACT_CTOR_DEF"/>
+            <property name="allowNoEmptyLineBetweenFields" value="true"/>
+        </module>
 
         <!-- 定义检查 -->
         <!-- 检查数组类型定义的样式 -->
@@ -182,6 +188,7 @@
         <module name="Regexp">
             <property name="format" value="System\.out\.println"/>
             <property name="illegalPattern" value="true"/>
+            <property name="ignoreComments" value="true"/>
         </module>
         <!-- return个数 3个-->
         <module name="ReturnCount">
