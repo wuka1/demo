@@ -13,7 +13,6 @@ public class Main {
      *
       */
     public void print(String str) {
-//        System.out.println(str);
     }
 
     /**
@@ -24,8 +23,6 @@ public class Main {
     public static void main(String[] args) {
         String str = "test";
         Main m = new Main();
-//        System.out.println(str);
         m.print(str);
-
     }
 }
