@@ -1,24 +1,16 @@
 /**
- * main类
+ * main类.
  *
  */
 public class Main {
-
+    private String temp1;
+    private String temp2;
 
     public Main() {
 
     }
 
-    private String temp;
-    /**
-     *  打印方法.
-     *
-     * @param str 入参
-     *
-      */
-    
     public void print(String str) {
-//        System.out.println(str);
     }
 
     /**

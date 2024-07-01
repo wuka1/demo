@@ -4,6 +4,7 @@
         "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
+    <property name="charset" value="UTF-8"/>
 
     <!-- 检查文件是否以一个空行结束 -->
     <module name="NewlineAtEndOfFile"/>
@@ -33,16 +34,13 @@
 
         <!-- 注释检查 -->
         <!-- 检查方法和构造函数的javadoc -->
-        <module name="JavadocType">
-<!--            <property name="allowUnknownTags" value="true"/>-->
-<!--            <message key="javadoc.missing" value="类注释：缺少Javadoc注释。"/>-->
-        </module>
+        <module name="JavadocType" />
         <module name="JavadocMethod">
             <property name="tokens" value="METHOD_DEF" />
             <message key="javadoc.missing" value="方法注释：缺少Javadoc注释。"/>
         </module>
         <module name="MissingJavadocType">
-            <property name="scope" value="protected"/>
+<!--            <property name="scope" value="protected"/>-->
             <property name="tokens"
                       value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF,
                       RECORD_DEF, ANNOTATION_DEF"/>
