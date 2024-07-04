@@ -12,8 +12,6 @@ public class Main {
     public static void main(String[] args) {
         String str = "test";
         Main m = new Main();
-        String t1 = "test1";
-        String t2 = "test2";
         m.print(str);
     }
 }
