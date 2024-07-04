@@ -1,7 +1,4 @@
-/**
- * main类.
- *
- */
+
 public class Main {
     private String temp1;
     private String temp2;
@@ -19,8 +16,6 @@ public class Main {
      * @param args str
      */
     public static void main(String[] args) {
-        System.out.println("test");
-        System.out.println("test2");
         String str = "test";
         Main m = new Main();
         m.print(str);
