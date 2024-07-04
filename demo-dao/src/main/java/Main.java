@@ -17,7 +17,7 @@ public class Main {
         String t3 = "test3";
         String t4 = "test4";
         String t5 = "test5";
-
+        String t6 = "test6";
         m.print(str);
     }
 }
