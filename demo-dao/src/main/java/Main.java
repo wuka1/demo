@@ -18,6 +18,8 @@ public class Main {
         String t4 = "test4";
         String t5 = "test5";
         String t6 = "test6";
+        String t7 = "test7";
+
         m.print(str);
     }
 }
