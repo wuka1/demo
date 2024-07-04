@@ -14,7 +14,6 @@ public class Main {
         Main m = new Main();
         String t1 = "test1";
         String t2 = "test2";
-        String t3 = "test3";
         m.print(str);
     }
 }
