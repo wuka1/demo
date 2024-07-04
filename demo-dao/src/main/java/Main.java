@@ -1,4 +1,4 @@
-
+//
 public class Main {
     private String temp1;
     private String temp2;
@@ -9,7 +9,6 @@ public class Main {
 
     public void print(String str) {
     }
-
 
     public static void main(String[] args) {
         String str = "test";
