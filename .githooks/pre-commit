@@ -5,19 +5,21 @@ function print(){
 echo "===========$*============"
 }
   
-echo -e "\033[34m[style check]\033[0m start..."  
+print "开始checkstyle检查........................"  
 wd=`pwd`  
   
-check_jar_path="$wd/.githook/checkstyle-9.3-all.jar"  
-check_xml_path="$wd/.githook/cib_checks.xml"  
+check_jar_path="$wd/p3c-pmd-2.1.1.jar"
+check_xml_path="$wd/rulesets/java/ali-comment.xml,$wd/rulesets/java/ali-concurrent.xml,$wd/rulesets/java/ali-constant.xml,$wd/rulesets/java/ali-exception.xml,$wd/rulesets/java/ali-flowcontrol.xml,$wd/rulesets/java/ali-naming.xml,$wd/rulesets/java/ali-oop.xml,$wd/rulesets/java/ali-orm.xml,$wd/rulesets/java/ali-other.xml,$wd/rulesets/java/ali-set.xml"
+check_result_file="$wd/temp"
 
-print "当前工作目录：$wd"
+echo "当前工作目录：$wd"
   
 echo "No Java file changes." > temp  
 files=`git status --porcelain | sed s/^...// | grep '\.java$' |grep -v 'test'| tr '\n' ' '`  
 if [ -n "$files" ]; then 
-#java -jar $check_jar_path -c $check_xml_path $files -o temp 2>&1   
-java -jar $check_jar_path -c $check_xml_path $files > temp 2>&1  
+#java -jar $check_jar_path -c $check_xml_path $files -o temp 2>&1 
+java -cp $check_jar_path net.sourceforge.pmd.PMD -d $files -R $check_xml_path -f text  > temp 2>&1
+#java -jar $check_jar_path -c $check_xml_path $files > temp 2>&1  
 fi 
 
 sed -i '$d' temp 
@@ -31,5 +33,5 @@ then
 print "commit失败,请在commit前完成checkstyle修订!"  
 exit 1  
 fi  
-echo -e "\033[34m[style check]\033[0m done."  
+print "checkstyle检查完成......................."  
 exit 0
