@@ -20,6 +20,8 @@ public class Main {
         String t6 = "test6";
         String t7 = "test7";
         String t8 = "test7";
+        String t9 = "test7";
+        String t10 =  "test7";
         m.print(str);
     }
 }
