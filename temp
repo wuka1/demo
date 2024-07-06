@@ -1,8 +1,0 @@
-七月 05, 2024 9:53:47 上午 net.sourceforge.pmd.PMD processFiles
-警告: This analysis could be faster, please consider using Incremental Analysis: https://pmd.github.io/pmd-6.15.0/pmd_userdocs_incremental_analysis.html
-七月 05, 2024 9:53:47 上午 net.sourceforge.pmd.lang.ast.xpath.Attribute getValue
-警告: Use of deprecated attribute 'FieldDeclaration/@Array' in XPath query
-七月 05, 2024 9:53:47 上午 net.sourceforge.pmd.lang.ast.xpath.Attribute getValue
-警告: Use of deprecated attribute 'LocalVariableDeclaration/@Array' in XPath query
-E:\javaWorkspace\demo\demo-dao\src\main\java\Main.java:1:	【Main】缺少包含@author的注释信息
-E:\javaWorkspace\demo\demo-service\src\main\java\Main.java:1:	【Main】缺少包含@author的注释信息
