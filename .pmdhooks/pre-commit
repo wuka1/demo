@@ -1,0 +1,44 @@
+#!/bin/bash  
+  
+# 一个打印函数，前后加空行
+function print(){
+echo "===========$*============"
+}
+
+FILE_ENCODING=utf-8
+PMD_LANGUAGE=zh
+  
+print "..................开始PMD检查....................."  
+wd=`pwd`  
+  
+check_jar_path="p3c-pmd-2.1.1-flat.jar"
+check_xml_path="rulesets/java/ali-comment.xml,rulesets/java/ali-concurrent.xml,rulesets/java/ali-constant.xml,rulesets/java/ali-exception.xml,rulesets/java/ali-flowcontrol.xml,rulesets/java/ali-naming.xml,rulesets/java/ali-oop.xml,rulesets/java/ali-orm.xml,rulesets/java/ali-other.xml,rulesets/java/ali-set.xml"
+check_result_file="$wd/temp"
+err_file="tmp"
+
+echo "当前工作目录：$wd"
+  
+#echo "No Java file changes." > temp 
+ 
+if [ -f $err_file ]; then
+rm -rf $err_file
+fi
+
+path=''
+for file in `git status --porcelain | sed s/^...// | grep '\.java$' |grep -v 'test'| tr '\n' ' '`;
+do
+path+="$file,"
+done
+if [ -n "$path" ]; then
+java -Dfile.encoding=$FILE_ENCODING -Dpmd.language=$PMD_LANGUAGE -cp $check_jar_path net.sourceforge.pmd.PMD -d $path -R $check_xml_path -f text > $err_file
+fi 
+
+if [ -s $err_file ]; then  
+print "commit失败,需修订问题如下，请在commit前完成PMD修订!" 
+cat $err_file  #显示错误
+rm -rf $err_file #删除错误临时文件
+print "本地修订可借助idea插件jup-pmd-plugin或p3c逐项进行!" 
+exit 1  
+fi  
+print "PMD检查完成.........................."   
+exit 0
