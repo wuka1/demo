@@ -7,6 +7,7 @@ public class Main {
     }
 
     public void print(String str) {
+        //TODO
     }
 
     public static void main(String[] args) {
@@ -23,6 +24,9 @@ public class Main {
         String t9 = "test7";
         String t10 =  "test7";
         String t11 =  "test7";
+        String t12 =  "test7";
+
         m.print(str);
     }
+
 }
