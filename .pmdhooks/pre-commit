@@ -11,7 +11,7 @@ PMD_LANGUAGE=zh
 print "..................开始PMD检查....................."  
 wd=`pwd`  
   
-check_jar_path="p3c-pmd-2.1.1-flat.jar"
+check_jar_path="$wd/.pmdhooks/p3c-pmd-2.1.1-flat.jar"
 check_xml_path="rulesets/java/ali-comment.xml,rulesets/java/ali-concurrent.xml,rulesets/java/ali-constant.xml,rulesets/java/ali-exception.xml,rulesets/java/ali-flowcontrol.xml,rulesets/java/ali-naming.xml,rulesets/java/ali-oop.xml,rulesets/java/ali-orm.xml,rulesets/java/ali-other.xml,rulesets/java/ali-set.xml"
 check_result_file="$wd/temp"
 err_file="tmp"
