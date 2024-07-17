@@ -12,26 +12,24 @@ print "..................开始PMD检查....................."
 wd=`pwd`  
 
 
-git_core_path="$wd/.git/hooks"
+hooks_path="$wd/.git/hooks"
 
-
-
-git_core_path_hooks = `git config core.hooksPath`
-if [ -n "$git_core_path_hooks" ]; then
-git_core_path="$git_core_path_hooks"
+# 已经工程目录下执行了git config core.hooksPath git/hooks/pmdhook
+git_hooks=`git config core.hooksPath`
+if [ -n "$git_hooks" ]; then
+hooks_path="$wd/$git_hooks"
 fi
 
-check_jar_path="$git_core_path/p3c-pmd-2.1.1-flat.jar"
-check_xml_path="$git_core_path/java/ali-comment.xml,$git_core_path/rulesets/java/ali-concurrent.xml,$git_core_path/rulesets/java/ali-constant.xml,$git_core_path/rulesets/java/ali-exception.xml,$git_core_path/rulesets/java/ali-flowcontrol.xml,$git_core_path/rulesets/java/ali-naming.xml,$git_core_path/rulesets/java/ali-oop.xml,$git_core_path/rulesets/java/ali-orm.xml,$git_core_path/rulesets/java/ali-other.xml,$git_core_path/rulesets/java/ali-set.xml"
-#check_jar_path="$wd/.pmdhooks/p3c-pmd-2.1.1-flat.jar"
-#check_xml_path="rulesets/java/ali-comment.xml,rulesets/java/ali-concurrent.xml,rulesets/java/ali-constant.xml,rulesets/java/ali-exception.xml,rulesets/java/ali-flowcontrol.xml,rulesets/java/ali-naming.xml,rulesets/java/ali-oop.xml,rulesets/java/ali-orm.xml,rulesets/java/ali-other.xml,rulesets/java/ali-set.xml"
+check_jar_path="$hooks_path/p3c-pmd-2.1.1-jar-with-dependencies.jar"
+
+# 放在项目目录下
+check_xml_path="rulesets/java/ali-comment.xml,rulesets/java/ali-concurrent.xml,rulesets/java/ali-constant.xml,rulesets/java/ali-exception.xml,rulesets/java/ali-flowcontrol.xml,rulesets/java/ali-naming.xml,rulesets/java/ali-oop.xml,rulesets/java/ali-orm.xml,rulesets/java/ali-other.xml,rulesets/java/ali-set.xml"
+#check_xml_path="$hooks_path/rulesets/java/ali-comment.xml,$hooks_path/rulesets/java/ali-concurrent.xml,$hooks_path/rulesets/java/ali-constant.xml,$hooks_path/rulesets/java/ali-exception.xml,$hooks_path/rulesets/java/ali-flowcontrol.xml,$hooks_path/rulesets/java/ali-naming.xml,$hooks_path/rulesets/java/ali-oop.xml,$hooks_path/rulesets/java/ali-orm.xml,$hooks_path/rulesets/java/ali-other.xml,$hooks_path/rulesets/java/ali-set.xml"
 check_result_file="$wd/temp"
 err_file="tmp"
 
 echo "当前工作目录：$wd"
-  
-#echo "No Java file changes." > temp 
- 
+   
 if [ -f $err_file ]; then
 rm -rf $err_file
 fi
@@ -53,4 +51,4 @@ print "本地修订可借助idea插件jup-pmd-plugin或p3c逐项进行!"
 exit 1  
 fi  
 print "PMD检查完成.........................."   
-exit 0
+exit 1
